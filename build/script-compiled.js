@@ -26,7 +26,27 @@ var Stopwatch = function (_React$Component) {
 
         _this.state = {
             running: false,
-            text: "00 : 00 : 00"
+            text: React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "span",
+                    null,
+                    "00"
+                ),
+                ":",
+                React.createElement(
+                    "span",
+                    null,
+                    "00"
+                ),
+                ":",
+                React.createElement(
+                    "span",
+                    null,
+                    "00"
+                )
+            )
         };
         _this.reset();
         _this.start = _this.start.bind(_this);
@@ -86,7 +106,32 @@ var Stopwatch = function (_React$Component) {
     }, {
         key: "format",
         value: function format(times) {
-            return pad0(times.minutes) + " : " + pad0(times.seconds) + " : " + pad0(Math.floor(times.miliseconds));
+            return React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "span",
+                    null,
+                    " ",
+                    pad0(times.minutes),
+                    " "
+                ),
+                ":",
+                React.createElement(
+                    "span",
+                    null,
+                    " ",
+                    pad0(times.seconds),
+                    " "
+                ),
+                ":",
+                React.createElement(
+                    "span",
+                    null,
+                    " ",
+                    pad0(Math.floor(times.miliseconds))
+                )
+            );
         }
     }, {
         key: "print",

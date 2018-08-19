@@ -1,7 +1,7 @@
 function pad0(value) {
     let result = value.toString();
     if (result.length < 2) {
-        result = '0' + result;
+        result ='0' + result;
     }
     return result;
 }
@@ -11,7 +11,7 @@ class Stopwatch extends React.Component {
         super();
         this.state = {
             running: false,
-            text: "00 : 00 : 00"
+            text: <div><span>00</span>:<span>00</span>:<span>00</span></div>
         };
         this.reset();
         this.start = this.start.bind(this);
@@ -56,7 +56,7 @@ class Stopwatch extends React.Component {
         console.log("The time is being calculated");
     }
     format(times) {
-        return `${pad0(times.minutes)} : ${pad0(times.seconds)} : ${pad0(Math.floor(times.miliseconds))}`;
+       return <div><span> {pad0(times.minutes)} </span>:<span> {pad0(times.seconds)} </span>:<span> {pad0(Math.floor(times.miliseconds))}</span></div>
     }
     print() {
         this.setState({ text: this.format(this.times) });

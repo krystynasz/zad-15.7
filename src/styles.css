@@ -32,3 +32,8 @@ button:hover {
     //margin: 30px;
     text-align: center;
 }
+
+span {
+    width: 120px;
+    display: inline-block;
+}
